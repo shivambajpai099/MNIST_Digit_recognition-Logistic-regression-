@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 mnist = fetch_mldata('MNIST original')
 
 print "Shape of MNIST Dataset: " + str(mnist.data.shape)
-# These are the labels
+
 print "Number of samples: " + str(mnist.target.shape)
 
 print "Number of images of each label: " + '\n'  + str(collections.Counter(mnist.target))
@@ -26,10 +26,6 @@ for index, (image, label) in enumerate(zip(train_img[0:5], train_lbl[0:5])):
     plt.title('Training: %i\n' % label, fontsize = 20)
 
 
-
-
-
-# all parameters not specified are set to their defaults
 # default solver is incredibly slow thats why we change it
 logisticRegr = LogisticRegression(solver = 'lbfgs')
 
